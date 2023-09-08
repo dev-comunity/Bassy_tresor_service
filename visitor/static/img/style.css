@@ -1,0 +1,7 @@
+
+body {
+        background-image: url('{% static "img/consulting.jpg" %}');
+        background-size: cover;  /* Ajustez la taille de l'image pour couvrir tout l'arrière-plan */
+        background-repeat: no-repeat;  /* Empêchez la répétition de l'image */
+    }
+    

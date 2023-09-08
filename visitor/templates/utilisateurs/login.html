@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <div class="row">
+        <div class="cl-md-12" style="padding-left: 50px;">
+            <p>Veuillez-vous connecter d'abord</p>
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="username"> Nom d'utilisateu</label>
+                <input type="text" id="username" name="username" class="form-control" style="width: 300px;">
+                <br>
+                <label for="password" > Mot de passe</label>
+                <input type="password" id="password" name="password" class="form-control" style="width: 300px;">
+                <br>
+                <input type="submit" value="connectez" class="btn btn-primary">
+        
+            </form>
+            <br>
+        </div>
+        <div style="padding-left: 20px;">
+            <h4>
+                Veuillez
+                <a href="{% url 'register' %}">
+                  cliquer ici
+                </a>
+                pour vous inscrire, si ce n'est pas fait !
+            </h4>
+        </div>
+    </div>
+</center>
+<hr width="20px">
+{% endblock %}

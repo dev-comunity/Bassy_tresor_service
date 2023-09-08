@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row md-12">
+        {% if not user.is_authenticated %}
+            <ul>
+                <li>
+                    Pour la garantie de votre securité et pour plus de fonctionnalité sur cette page. <br>
+                    Veuillez-vous connecter avant toute interaction !
+                </li>
+            </ul>
+            <div style="padding-left: 100px;">
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                
+                </span>
+                <a href="{% url 'login'%}" style="color:white;width: 200px;"> se connecter </a>
+            </button>
+            </div>
+            {% elif  user.is_professionel %}
+      
+        <h6>
+            <marquee behavior="" direction="right">
+                Merci et bienvenue sur la page des astuces naturelle de la plateforme BASSYconsula<br>
+
+            </marquee>
+        </h6>
+                
+                    <ul>
+                        <li>
+                            Pour repondre à des demandes de consultation , <a href="{% url 'reponse'%}">cliquez ici</a> ou sur le bouton <br>
+                            d'en-bas ! 
+                        </li>
+                    </ul>
+
+                <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                        
+                    </span>
+                    <a href="{% url 'reponse'%}" style="color:white;width: 10px;"> Repondre aux demandes </a>
+                </button>
+
+                <ul>
+                    <li>
+                        Pour voir les consultation faites , <a href="{% url 'resultatconsultation'%}">cliquez ici</a> ou sur le bouton <br>
+                        d'en-bas ! 
+                    </li>
+                </ul>
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'resultatconsultation'%}" style="color:white;width: 10px;"> voir mes consultations  </a>
+            </button>
+                    <ul>
+                        <li>
+                            Pour voir les resultats de consultation, <a href="{% url 'resultatconsultation'%}">cliquez ici</a> ou sur le bouton <br>
+                            d'en-bas ! 
+                        </li>
+                    </ul>
+
+                <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                        
+                    </span>
+                    <a href="{% url 'resultatconsultation'%}" style="color:white;width: 10px;"> voir les reponses aux demandes </a>
+                </button>
+        {% else %}
+          
+            <h6>
+                <marquee behavior="" direction="right">
+                    Merci,et bienvenue sur la page de consultation de la plateforme <br>
+
+                </marquee>
+            </h6>
+        <ul>
+            <li>
+                Pour demander de consultation <a href="{% url 'demandeconsultation'%}">cliquez ici</a> ou sur le bouton
+                d'en-bas ! 
+            </li>
+        </ul>
+            <div style="padding-left: 100px;padding-bottom: 20px;">
+                <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">    
+                    </span>
+                    <a href="{% url 'demandeconsultation'%}" style="color:white;width: 10px;">demander de consultation</a>
+                </button>
+            </div>
+            <ul>
+                <li>
+                    Pour voir les resultats de consultation <a href="{% url 'resultatconsultation'%}">cliquez ici</a> ou sur le bouton
+                    d'en-bas ! 
+                </li>
+            </ul>
+                <div style="padding-left: 100px;padding-bottom: 20px;">
+                    <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">    
+                        </span>
+                        <a href="{% url 'resultatconsultation'%}" style="color:white;width: 10px;">resultats de consultation</a>
+                    </button>
+                </div>
+            
+            <ul>
+                <li>
+                    <a href="{% url 'afficheastuce'%}">
+                    cliquez ici 
+                    </a>
+                    pour voir les conseils sur certaines situations naturelles.
+                </li>
+            </ul>
+        <div style="padding-left: 100px;">
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">     
+                </span>
+                <a href="{% url 'afficheastuce'%}" style="color:white;width: 10px;">voir les predications </a>  
+            </button>
+        </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

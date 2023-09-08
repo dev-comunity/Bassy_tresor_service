@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+        <div class="col md-12">
+                <div class="card">
+            {% for elm in RV %}
+
+       
+                
+                    <div class="card-body">
+                        
+                        <h5 class="card-title">
+                            {{elm.objet}}
+                        </h5>
+                        <p>{{elm.desc}}</p>
+                        <p>mise à jour il y'a {{elm.date}}</p>
+                    </div>
+                
+            
+            {% endfor %}
+        </div>
+    </div>
+    </center>
+{% endblock %}

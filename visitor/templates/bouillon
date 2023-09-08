@@ -1,0 +1,158 @@
+<h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+
+
+      <div class="card text-center" >
+        <div class="card-header" style="background: rgb(181, 214, 242);">
+          BASSYconsula
+        </div>
+        <div class="card-body">
+         
+        </div>
+        
+      </div>
+
+
+      description=forms.CharField(label='',widget=forms.Textarea(
+        attrs={
+            'placeholder':'decrivez ici votre préoccupation que vous voulez consulter!'
+        }
+    ))
+
+
+   
+   
+
+      
+
+
+
+    Bienvenue sur notre plateforme de consultation en ligne !
+
+    Notre site de consultation est dédié à vous offrir des services de qualité pour répondre à vos besoins et préoccupations. Que ce soit pour des conseils professionnels, des avis médicaux, des séances de coaching personnel, ou des expertises spécialisées, nous mettons à votre disposition un réseau de professionnels compétents et expérimentés prêts à vous accompagner.
+    
+    Notre équipe diversifiée de consultants qualifiés couvre une vaste gamme de domaines, garantissant que vous trouverez l'expertise adaptée à vos questions. Grâce à notre plateforme conviviale et sécurisée, vous pouvez accéder à des consultations en ligne à tout moment et n'importe où, vous offrant la flexibilité dont vous avez besoin pour votre emploi du temps chargé.
+    
+    Comment ça fonctionne ?
+    1. Choisissez le domaine de consultation qui correspond à vos besoins : que ce soit professionnel, médical, psychologique, juridique, ou autre, nous avons le consultant adapté pour vous.
+    2. Sélectionnez un consultant parmi nos professionnels certifiés.
+    3. Planifiez une consultation en ligne à votre convenance.
+    4. Profitez de la consultation en temps réel, via un chat, un appel vocal ou une vidéoconférence, selon vos préférences.
+    5. Bénéficiez d'avis éclairés, de conseils pertinents et de solutions adaptées à votre situation.
+    
+    Nous comprenons l'importance de la confidentialité et de la sécurité dans les consultations en ligne. Vos données personnelles sont traitées avec le plus grand soin et notre plateforme utilise des protocoles de sécurité avancés pour garantir la protection de vos informations.
+    
+    Nous nous engageons à vous offrir une expérience de consultation en ligne fluide, professionnelle et constructive. Explorez nos services dès aujourd'hui et prenez le contrôle de votre bien-être et de votre réussite.
+    
+    L'équipe de BASSYconsula est là pour vous accompagner à chaque étape de votre parcours. N'hésitez pas à nous contacter si vous avez des questions ou si vous avez besoin d'assistance. Nous sommes impatients de vous voir prospérer avec nos services de consultation en ligne.
+    
+    Bienvenue dans votre espace de consultation en ligne,
+    L'équipe de BASSYconsula.
+      
+
+
+
+
+
+
+    Bienvenue dans sur notre site (BASSYconsula) de consultation, votre compagnon 
+            de confiance pour prendre soin de votre bien-etre. Explorez nos services 
+            professionels, trouvez des consiels experts et découvrez une expérience
+            de consultation sans pareille. Prenez le controle de votre santé mentale 
+            et trouvez la tranquillité d'esprit dès aujourd'hui. Connectz-vous à notre 
+            site et commencez votre parcours vers une vie plus équilibrée et epanouissante!
+
+
+
+            {% else %}
+
+            <ul>
+                <li>
+                    <marquee behavior="" direction="left">
+                        Merci,et bienvenue sur la page des astuces naturelle de la plateforme BASSYconsula<br>
+        
+                    </marquee>
+                </li>
+                
+                    </ul>
+                        
+                            <ul>
+                                <li>
+                                    Pour voir les differentes interprétations des reves , <a href="{% url 'voir_reve'%}">cliquez ici</a> ou sur le bouton <br>
+                                    d'en-bas ! 
+                                </li>
+                            </ul>
+        
+                        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                                
+                            </span>
+                            <a href="{% url 'voir_reve'%}" style="color:white;width: 10px;"> les reves interpretés  </a>
+                        </button>
+
+
+
+def renomme(instence,filename):
+    upload_to='image/'
+    ext=filename.split('.')[-1]
+    if instence.user.username :
+        filename="photo_profile/{}.{}".format(instence.user.username,ext)
+        return os.path.join(upload_to,filename)
+
+class Profile (models.Model):
+    user =models.OneToOneField(User,on_delete=models.CASCADE)
+    photo_profile=models.FileField(upload_to=renomme,blank=True)
+    ville=models.CharField(max_length=100,verbose_name='ville habité')
+    number=models.CharField(max_length=10)
+    infos=models.TextField(blank=True,verbose_name='Description')
+
+    def __str__(self):
+        return self.user.username
+
+    
+        class userprofile(forms.ModelForm):
+        photo_profile=forms.ImageField(
+            label='')
+        ville=forms.CharField(widget=forms.TextInput(
+            attrs={
+                'placeholder':'ville où vous vivez actuellement',
+            }
+        ))
+        number=forms.CharField(widget=forms.NumberInput(
+            attrs={
+                'placeholder':'votre numero de téléphone'
+            }
+        ))
+        class Meta:
+            model=Profile
+            fields=[
+                'photo_profile',
+                'ville',
+                'number',
+            ]
+
+
+<div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{itm.utilisateur}}</div>
+                <div class="card-body">
+                    <h5 class="card-title">Il y'a {{itm.date}}</h5>
+                    <p class="card-text">{{itm.question}}</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        {% for itm in reponse %}
+        {% if {{itm.nom}}=={{consul.nom }}%}
+            <p>il y'a {{itm.date}} </p>
+            <h6>{{itm.son_but}}</h6>
+            <p class="card-text">{{itm.desc}}</p>
+
+        {% endif%}
+
+    {% endfor %}

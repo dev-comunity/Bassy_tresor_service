@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <div class="col md-12 ">
+        <div class="col">
+            {% for itm in astuce %}
+
+    
+            <div class="card">
+                <div class="card-body">
+                        
+                    <h5 class="card-title">
+                      {{itm.titre}}
+                    </h5>
+                    <p>{{itm.astuce}}</p>
+                    <img src="" alt="">
+                    <p>mise en ligne le {{itm.date}}</p>
+                </div>
+            </div>
+       
+            {% endfor %}
+        </div>
+    </div>
+</center>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% if not user.is_authenticated %}
+
+    <h6>
+        Pour la garantie de votre securité et pour avoir acces àqq plus de fonctionnalité sur cette page. <br>
+        Veuillez-vous connecter avant toute interaction !
+    </h6>
+
+<div style="padding-left: 100px;padding-bottom: 20px;">
+  <button class="btn btn-primary" type="submit" style="width: 200px;" >
+    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+        
+    </span>
+    <a href="{% url 'login'%}" style="color:white;width: 10px;"> se connecter </a>
+  </button>
+
+</div>
+{% elif user.is_professionel %}
+<ul>
+    <li>
+        Pour mettre l'interprétation d'un reve , <a href="{% url 'reveform'%}">cliquez ici</a> ou sur le bouton <br>
+        d'en-bas ! 
+    </li>
+</ul>
+<div style="padding-left: 100px;padding-bottom: 20px;">
+<button class="btn btn-primary" type="submit" style="width: 200px;" >
+<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+    
+</span>
+<a href="{% url 'reveform'%}" style="color:white;width: 10px;"> Mettre l'interprétation d'un reve </a>
+</button>
+</div>
+
+        <ul>
+            <li>
+                Pour voir les differentes reves déjà interpretés , <a href="{% url 'affiche_reve'%}">cliquez ici</a> ou sur le bouton <br>
+                d'en-bas ! 
+            </li>
+        </ul>
+        <div style="padding-left: 100px;padding-bottom: 20px;">
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+            
+        </span>
+        <a href="{% url 'affiche_reve'%}" style="color:white;width: 10px;"> les reves déjà interpretés </a>
+        </button>
+        </div>
+        
+        <ul>
+            <li>
+                Pour voir les demandes envoyées , <a href="{% url 'voir_reve'%}">cliquez ici</a> ou sur le bouton <br>
+                d'en-bas ! 
+            </li>
+        </ul>
+        <div style="padding-left: 100px;padding-bottom: 20px;">
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+            
+        </span>
+        <a href="{% url 'voir_reve'%}" style="color:white;width: 10px;"> les demandes envoyées </a>
+        </button>
+        </div>
+       
+
+
+{% else %}
+ 
+    <h6 style="padding: 20ppx;">
+        <marquee behavior="" direction="right">
+            Merci et bienvenue sur la page de reve de la plateforme BASSYconsula<br>
+
+        </marquee>
+    </h6>
+
+        <ul>
+            <li>
+                Pour voir les differentes reves déjà interpretés , <a href="{% url 'affiche_reve'%}">cliquez ici</a> ou sur le bouton <br>
+                d'en-bas ! 
+            </li>
+        </ul>
+        <div style="padding-left: 100px;padding-bottom: 20px;">
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+            
+        </span>
+        <a href="{% url 'affiche_reve'%}" style="color:white;width: 10px;"> les reves déjà interpretés </a>
+        </button>
+        </div>
+        <ul>
+            <li>
+                Pour demander la signification d'un reve , <a href="{% url 'formreve'%}">cliquez ici</a> ou sur le bouton <br>
+                d'en-bas ! 
+            </li>
+        </ul>
+        <div style="padding-left: 100px;padding-bottom: 20px;">
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'formreve'%}" style="color:white;width: 10px;"> demander la signification d'un reve </a>
+            </button>
+        </div>
+
+                <ul>
+                    <li>
+                        Pour voir les differentes demandes exposées  , <a href="{% url 'voir_reve'%}">cliquez ici</a> ou sur le bouton <br>
+                        d'en-bas ! 
+                    </li>
+                </ul>
+        <div style="padding-left: 100px;padding-bottom: 20px;">
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'voir_reve'%}" style="color:white;width: 10px;"> les demandes envoyées </a>
+            </button>
+        </div>
+                
+{% endif %}
+
+{% endblock %}

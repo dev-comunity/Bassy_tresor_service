@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="row md-12">
+    {% if not user.is_authenticated %}
+    <ul>
+        <li>
+            Pour la garantie de votre securité et pour plus de fonctionnalité sur cette page. <br>
+            Veuillez-vous connecter avant toute interaction !
+        </li>
+    </ul>
+    
+      <button class="btn btn-primary" type="submit" style="width: 200px;" >
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+            
+        </span>
+        <a href="{% url 'login'%}" style="color:white;width: 10px;"> se connecter </a>
+      </button>
+    {% else %}
+      
+        <h6>
+            <marquee behavior="" direction="right">
+                Merci,et bienvenue sur la page de cours de la plateforme BASSYconsula<br>
+
+            </marquee>
+        </h6>
+        
+        
+                {% if user.is_academicien %}
+                    <ul>
+                        <li>
+                            Pour voir les differents cours, <a href="{% url 'affichecours'%}">cliquez ici</a> ou sur le bouton <br>
+                            d'en-bas ! 
+                        </li>
+                    </ul>
+
+                <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                        
+                    </span>
+                    <a href="{% url 'affichecours'%}" style="color:white;width: 10px;"> voir les cours</a>
+                </button>
+
+                <ul>
+                    <li>
+                        <a href="{% url 'questionnaire'%}">
+                        cliquez chat 
+                        </a>
+                        pour poser des questions.
+                    </li>
+                </ul>
+                <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                        
+                    </span>
+                    <a href="{% url 'questionnaire'%}" style="color:white;width: 10px;">j'ai une question </a>
+                </button>
+                {% elif user.is_formateur %}
+
+                <ul>
+                    <li>
+                        Pour deposer les cours, <a href="{% url 'formcours'%}">cliquez ici</a> ou sur le bouton <br>
+                        d'en-bas ! 
+                    </li>
+                </ul>
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'formcours'%}" style="color:white;width: 10px;"> deposer de cours  </a>
+            </button>
+                <ul>
+                    <li>
+                        Pour voir les differents cours, <a href="{% url 'affichecours'%}">cliquez ici</a> ou sur le bouton <br>
+                        d'en-bas ! 
+                    </li>
+                </ul>
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'affichecours'%}" style="color:white;width: 10px;"> voir les differents cous </a>
+            </button>
+
+            <ul>
+                <li>
+                    <a href="{% url 'questionnaire'%}">
+                    Chat de questionnaire
+                    </a>
+                    pour repondre à vos differentes question
+                </li>
+            </ul>
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'questionnaire'%}" style="color:white;width: 10px;">Chat de question </a>
+            </button>
+            <ul>
+                <li>
+                    Pour voir les academiciens, <a href="{% url 'afficheacademicien'%}">cliquez ici</a> ou sur le bouton <br>
+                    d'en-bas ! 
+                </li>
+            </ul>
+
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                
+            </span>
+            <a href="{% url 'afficheacademicien'%}" style="color:white;width: 10px;"> les academiciens  </a>
+        </button>
+            {% elif user.is_professionel %}
+            <ul>
+                <li>
+                    Pour deposer les cours, <a href="{% url 'formcours'%}">cliquez ici</a> ou sur le bouton <br>
+                    d'en-bas ! 
+                </li>
+            </ul>
+    <div style="padding-left: 100px;padding-bottom: 20px;">
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                
+            </span>
+            <a href="{% url 'formcours'%}" style="color:white;width: 10px;"> deposer de cours  </a>
+        </button>
+    </div>
+            <ul>
+                <li>
+                    Pour voir les differents cours, <a href="{% url 'affichecours'%}">cliquez ici</a> ou sur le bouton <br>
+                    d'en-bas ! 
+                </li>
+            </ul>
+            <div style="padding-left: 100px;padding-bottom: 20px;">
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                
+            </span>
+            <a href="{% url 'affichecours'%}" style="color:white;width: 10px;"> voir les differents cours </a>
+        </button>
+        </div>
+        <ul>
+            <li>
+                <a href="{% url 'questionnaire'%}">
+                Chat de questionnaire
+                </a>
+                pour repondre à vos differentes question
+            </li>
+        </ul>
+        <div style="padding-left: 100px;padding-bottom: 20px;">
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                
+            </span>
+            <a href="{% url 'questionnaire'%}" style="color:white;width: 10px;">chat de question </a>
+        </button>
+        </div>
+        <ul>
+            <li>
+                Pour voir les academiciens, <a href="{% url 'afficheacademicien'%}">cliquez ici</a> ou sur le bouton <br>
+                d'en-bas ! 
+            </li>
+        </ul>
+        <div style="padding-left: 100px;padding-bottom: 20px;">
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+            
+        </span>
+        <a href="{% url 'afficheacademicien'%}" style="color:white;width: 10px;"> les academiciens  </a>
+        </button>
+        </div>
+        <ul>
+            <li>
+                Pour inscrire un academicien, <a href="{% url 'formacdemicien'%}">cliquez ici</a> ou sur le bouton <br>
+                d'en-bas ! 
+            </li>
+        </ul>
+    <div style="padding-left: 100px;padding-bottom: 20px;">
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+            
+        </span>
+        <a href="{% url 'formacdemicien'%}" style="color:white;width: 10px;">Ajouter un academicien </a>
+        </button>
+    </div>
+        {% else %}
+        <ul>
+            <li>
+                Pour toutes demandes d'adhesion à la classe  des academiciens, <a href="{% url 'demande_Adhesion'%}">cliquez ici</a> ou sur le bouton <br>
+                d'en-bas ! 
+            </li>
+        </ul>
+    <div style="padding-left: 100px;">
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+            
+        </span>
+        <a href="{% url 'demande_Adhesion'%}" style="color:white;width: 10px;"> demande d'adhesion   </a>
+        </button>
+
+    </div>
+        {% endif %}
+
+    {% endif %}
+</div>
+{% endblock %}

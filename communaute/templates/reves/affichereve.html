@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            {% for itm in voir %}
+
+    
+            <div class="card">
+                <div class="card-body">
+                        
+                    <h5 class="card-title">
+                        {% if user.is_authentificated %}
+                            {{itm.request.user.first_name}} {{itm.request.user.last_name}}
+                        {% endif %} 
+                        demande la definition d'un reve il y'a 
+                        {{itm.datereve}}
+                    </h5>
+                    <p>{{itm.decrire}}</p>
+                
+                </div>
+            </div>
+       
+            {% endfor %}
+        </div>
+    </div>
+</center>
+{% endblock %}

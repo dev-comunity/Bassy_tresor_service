@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form action="" method="post">
+        {% crsf_token %}
+        {{message}}
+        {% form.as_p|crispy %}
+        
+        <button type="submit" class="btn btn-primary"> Deposer le produit </button>
+        s
+    </form>
+{% endblock %}

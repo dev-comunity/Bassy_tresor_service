@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="row" style="margin-left: 20px;">
+  
+  {% for consul in reponse %}
+        <div class="card w-75">
+          <div class="card-body">
+            
+        {% if user.is_visitor and user.is_professionel %}
+          <h5 class="card-title">Reponse à la demande de {{consul.nom}}</h5>
+            <h6>{{consul.son_but}}</h6>
+            <p>{{consul.date}}</p>
+            <p class="card-text">{{consul.desc}}</p>
+              </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}

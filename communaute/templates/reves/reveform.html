@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<center>
+  <div class="card-body">
+      <form action="" method="post">
+          {% csrf_token %}
+      
+          {{depos|crispy }}
+          {{message}}
+          <br>
+          <button type="submit" class="btn btn-primary"> envoyer </button>
+      </form>
+  
+  </div>
+</center>
+{% endblock %}

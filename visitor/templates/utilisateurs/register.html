@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="row" >
+    <center>
+    <div class="col-md-12">
+        {% if registered %}
+            <h2> vous etes déjà enregistrer</h2>
+        {% endif %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <p>{{form1|crispy}}</p>
+                <br>
+                <input type="submit"  class="btn btn-primary" value="enregistrer">
+            </form>
+    </div>
+</center>
+</div>
+  <hr width="20px">
+
+{% endblock %}

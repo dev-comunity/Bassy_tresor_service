@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<center>
+  <div class="card-body">
+    <h5 style="color: brown;padding-bottom: 20px;">
+      
+        Veuillez bien decrire votre reves! <br>
+        Cela nous aide à bien vous guider dans l'interprétation du reve ! <br>
+        Si possible donnez l'heure, jour et la date du reve !
+      
+    </h5>
+      <form action="" method="post">
+          {% csrf_token %}
+      
+          {{reves|crispy }}
+          {{message}}
+          <br>
+          <button type="submit" class="btn btn-primary"> envoyer </button>
+      </form>
+  
+  </div>
+</center>
+{% endblock %}

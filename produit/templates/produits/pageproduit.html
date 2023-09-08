@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for itm in produit %}
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">{{itm.nom_produit}} a été deposé il y'a {{itm.datedepot}}</h5>
+                    <p>{{itm.typeproduit}}</p>
+                    <p class="card-text">{{itm.caractere}}</p>
+                    <br>
+                    <p class="card-text">{{itm.applique}}</p>
+                    <p class="card-text">{{itm.prix}}</p>
+
+                    <p>ce produit s'expire le {{itm.experiente}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

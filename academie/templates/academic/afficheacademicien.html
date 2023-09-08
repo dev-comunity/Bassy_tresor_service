@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="row">ID</th>
+        <th scope="row">NOM</th>
+        <th scope="row">PRENOM</th>
+      </tr>
+    </thead>
+    {% for eleve in academicien %}
+    <tbody>
+      <tr>
+        <th scope="row">{{ eleve.id}}</th>
+        <td colspan="2" class="table-active">{{eleve.first_name}}</td>
+        <td>{{ eleve.last_name }}</td>
+        <td>{{eleve.email}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+  
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="row">ID</th>
+        <th scope="row">NOM</th>
+        <th scope="row">PRENOM</th>
+        <th scope="row">
+            Objet Demande
+        </th>
+        <th scope="row">
+            Telephone
+        </th>
+        <th scope="row">
+            Adress
+        </th>
+        <th scope="row">
+            Date
+        </th>
+        <th scope="row">
+            Details
+        </th>
+      </tr>
+    </thead>
+    {% for itm in list %}
+    <tbody>
+      <tr>
+        
+            <th scope="row" >{{itm.id}}</th>
+       
+            {% if user.is_authenticated %}
+                <td scope="row">{{request.user.username}}</td>
+                <td scope="row">{{request.user.last_name}}</td>
+            {% endif %}
+            <td scope="row">{{itm.objet}}</td>
+            <td scope="row">{{itm.numero}}</td>
+            <td scope="row">{{itm.adress}}</td>
+            <td scope="row">{{itm.date}}</td>
+            <td >
+                <a href="{% url 'detail' itm.id %}" style="color: red;">
+                    voir les details 
+                </a>
+            </td>
+        
+      </tr>
+    </tbody>
+    {% endfor %}
+
+  </table>
+  
+{% endblock %}

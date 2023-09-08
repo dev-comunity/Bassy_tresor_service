@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="row">ID</th>
+        <th scope="row">Nom au complet</th>
+        <th scope="row">
+            Specialité
+        </th>
+        <th scope="row">
+            Ville
+        </th>
+        <th scope="row">
+            Telephone
+        </th>
+        <th scope="row">
+            Details
+        </th>
+      </tr>
+    </thead>
+    {% for itm in vendeur %}
+    <tbody>
+      <tr>
+        
+            <th scope="row" >{{itm.id}}</th>
+            <td scope="row">{{itm.user}}</td>
+            <td scope="row">{{itm.specialite}}</td>
+            <td scope="row">{{itm.ville}}</td>
+            <td scope="row">{{itm.numero}}</td>
+            <td >
+                <a href="{% url 'detail' itm.id %}" style="color: red;">
+                    voir les details 
+                </a>
+            </td>
+        
+      </tr>
+    </tbody>
+    {% endfor %}
+
+  </table>
+{% endblock %}

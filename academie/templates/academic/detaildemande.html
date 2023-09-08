@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    
+    <div class="card">
+        <div class="card-header">
+          Demande de {{request.user.first_name}}
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{detail.objet}}</p>
+            <br>
+            <footer class="blockquote-footer">{{detail.demande}}</footer>
+            <br>
+            <p>Il y'a {{detail.date}}</p>
+            <p>Téléphone : {{detail.numero}} Et adresse E-mail : {{detail.adress}} </p>
+          </blockquote>
+        </div>
+      </div>
+   
+
+{% endblock %}

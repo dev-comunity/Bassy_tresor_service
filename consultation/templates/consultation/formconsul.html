@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<center>
+  <p> chers consultants veuillez remplir les champs de manière precise pour recevoir une consultation de qualité ! </p>
+  <form action="" method="post">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <br>
+    <button type="submit" class="btn btn-primary"> Envoyer </button>
+    <br>
+  </form>
+</center>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<li style="margin-left: 20px;">Resultats de la recherche  "{{query}}" </li>
+<center>
+<div class="contenair" style="margin-left: 5px;">
+    <div class="card mb-2 p-2">
+        {% for result in results %}
+        
+            <div class="card-body  " >
+            
+                <p class="card-text">
+                    {{result}}
+                </p>
+            {% empty %}
+                <p>Aucun resultat trouvé </p>
+            
+            </div>
+        
+        {% endfor %}
+    </div>
+</div>
+</center>
+    
+{% endblock %}

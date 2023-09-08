@@ -1,0 +1,76 @@
+{% extends 'base.html'%}
+{% block content %}
+
+{% if not user.is_authenticated %}
+    <ul>
+        <li>
+            Pour la garantie de votre securité et pour plus de fonctionnalité sur cette page. <br>
+            Veuillez-vous connecter avant toute interaction !
+        </li>
+    </ul>
+    
+      <button class="btn btn-primary" type="submit" style="width: 200px;" >
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+            
+        </span>
+        <a href="{% url 'login'%}" style="color:white;width: 10px;"> se connecter </a>
+      </button>
+    {% elif  user.is_professionel %}
+      
+        <h6>
+            <marquee behavior="" direction="right">
+                Merci et bienvenue sur la page des astuces naturelle de la plateforme BASSYconsula<br>
+
+            </marquee>
+        </h6>
+                
+                    <ul>
+                        <li>
+                            Pour voir les differentes astuces naturelle, <a href="{% url 'afficheastuce'%}">cliquez ici</a> ou sur le bouton <br>
+                            d'en-bas ! 
+                        </li>
+                    </ul>
+
+                <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                        
+                    </span>
+                    <a href="{% url 'afficheastuce'%}" style="color:white;width: 10px;"> les astuces naturelles </a>
+                </button>
+                    <ul>
+                        <li>
+                            Pour deposer des astuces naturelles, <a href="{% url 'formastuce'%}">cliquez ici</a> ou sur le bouton <br>
+                            d'en-bas ! 
+                        </li>
+                    </ul>
+
+                <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                        
+                    </span>
+                    <a href="{% url 'formastuce'%}" style="color:white;width: 10px;"> deposer astuces </a>
+                </button>
+            {% else %}
+                <h6>
+                    <marquee behavior="" direction="right">
+                        Merci et bienvenue sur la page des astuces naturelle de la plateforme BASSYconsula<br>
+        
+                    </marquee>
+                </h6>
+                        
+                            <ul>
+                                <li>
+                                    Pour voir les differentes astuces naturelle, <a href="{% url 'afficheastuce'%}">cliquez ici</a> ou sur le bouton <br>
+                                    d'en-bas ! 
+                                </li>
+                            </ul>
+        
+                        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                                
+                            </span>
+                            <a href="{% url 'afficheastuce'%}" style="color:white;width: 10px;"> les astuces naturelles </a>
+                        </button>
+    {% endif %}
+
+{% endblock %}

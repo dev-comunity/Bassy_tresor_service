@@ -1,0 +1,143 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    {% if not user.is_authenticated %}
+        <ul>
+            <li>
+                Pour la garantie de votre securité et pour plus de fonctionnalité sur cette page. <br>
+                Veuillez-vous connecter avant toute interaction !
+            </li>
+        </ul>
+
+        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                
+            </span>
+            <a href="{% url 'login'%}" style="color:white;width: 10px;"> se connecter </a>
+        </button>
+        {% elif user.is_vendeur %}
+            <ul>
+                <li>
+                    Pour voir les differentes produits disponibles sur le marché, <a href="{% url 'affiche_produit'%}">cliquez ici</a> ou sur le bouton <br>
+                    d'en-bas ! 
+                </li>
+            </ul>
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'affiche_produit'%}" style="color:white;width: 10px;"> Afficher les produits </a>
+            </button>
+
+            <ul>
+                <li>
+                    Pour demander de produit , <a href="{% url 'demandeproduit'%}">cliquez ici</a> ou sur le bouton <br>
+                    d'en-bas ! 
+                </li>
+            </ul>
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'demandeproduit'%}" style="color:white;width: 10px;"> Demander de produit </a>
+            </button>
+                <ul>
+                    <li>
+                        Pour deposer de produit, <a href="{% url 'deposer_produit'%}">cliquez ici</a> ou sur le bouton <br>
+                        d'en-bas ! 
+                    </li>
+                </ul>
+    
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'deposer_produit'%}" style="color:white;width: 10px;">Deposer de produit </a>
+            </button>
+            {% elif user.is_professionel%}
+            <ul>
+                <li>
+                    Pour voir les differentes produits disponibles sur le marché, <a href="{% url 'affiche_produit'%}">cliquez ici</a> ou sur le bouton <br>
+                    d'en-bas ! 
+                </li>
+            </ul>
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'affiche_produit'%}" style="color:white;width: 10px;"> Afficher les produits </a>
+            </button>
+
+            <ul>
+                <li>
+                    Pour demander de produit , <a href="{% url 'demandeproduit'%}">cliquez ici</a> ou sur le bouton <br>
+                    d'en-bas ! 
+                </li>
+            </ul>
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'demandeproduit'%}" style="color:white;width: 10px;"> Demander de produit </a>
+            </button>
+                <ul>
+                    <li>
+                        Pour deposer de produit, <a href="{% url 'deposer_produit'%}">cliquez ici</a> ou sur le bouton <br>
+                        d'en-bas ! 
+                    </li>
+                </ul>
+    
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'deposer_produit'%}" style="color:white;width: 10px;">Deposer de produit </a>
+            </button>
+            
+    {% else %}
+        
+            
+        <marquee behavior="" direction="right">
+            Merci,et bienvenue sur la page des astuces naturelle de la plateforme BASSYconsula<br>
+
+        </marquee>
+            
+            
+        
+        
+            <ul>
+                <li>
+                    Pour voir les differentes produits disponibles sur le marché, <a href="{% url 'affiche_produit'%}">cliquez ici</a> ou sur le bouton <br>
+                    d'en-bas ! 
+                </li>
+            </ul>
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'affiche_produit'%}" style="color:white;width: 10px;"> Afficher les produits </a>
+            </button>
+
+            <ul>
+                <li>
+                    Pour demander de produit , <a href="{% url 'demandeproduit'%}">cliquez ici</a> ou sur le bouton <br>
+                    d'en-bas ! 
+                </li>
+            </ul>
+
+            <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                    
+                </span>
+                <a href="{% url 'demandeproduit'%}" style="color:white;width: 10px;"> Demander de produit </a>
+            </button>
+    {% endif %}
+
+{% endblock %}

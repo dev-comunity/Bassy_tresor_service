@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<center>
+    <div class="row md-12">
+        
+        {% for itm in demande %}
+            
+                <div class="card" style="margin: 10px;">
+                    <div class="card-header">
+                        <h6>{{request.user.username}} demande  {{itm.mode}} il y'a {{itm.temps}}</h6>
+
+                    </div>
+                    <div class="card-body">
+                        <p>{{itm.Description}}</p>
+                    </div>
+                </div>
+            {%if user.is_professionel %}
+                <p>Repondre si vous avez consulté son dossier </p>
+                    <div style="margin-left: 80px;padding-bottom: 20px;">
+                        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">    
+                            </span>
+                            <a href="{% url 'reponse'%}" style="color:white;width: 10px;">repondre</a>
+                        </button>
+                    </div>
+            {% endif %}
+            
+        {% endfor %}
+        
+    </div>
+</center>
+{% endblock %}

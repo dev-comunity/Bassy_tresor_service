@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for itm in reponse %}
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">{{itm.nomproduit}}</h5>
+                    <p class="card-text">{{itm.caractere}}</p>
+                    <br>
+                    <p class="card-text">{{itm.prix}}</p>
+
+                    <p>je suis au/en {{itm.lieu}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
