@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
@@ -21,12 +22,13 @@ TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gjy3em9-(3*3qb6!9ar$9bmg-@_ampnt=2=xbnft4bfy8x7302'
+from decouple import config
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = "visitor.User"
 
@@ -93,14 +95,18 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#        "TEST": {
+#            "NAME": BASE_DIR / "db.sqlite3",
+#        },
+#    }
+#}
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        "TEST": {
-            "NAME": BASE_DIR / "db.sqlite3",
-        },
-    }
+    'default':dj_database_url.parse(config('DATABASE_URL'))
 }
 
 
@@ -149,6 +155,29 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'Media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL="/login"
+
+
+#from decouple import config
+
+#SECRET_KEY = config('SECRET_KEY')
+#DEBUG = config('DEBUG', default=False, cast=bool)
+#DATABASES = {
+#    'default': {
+ #       'ENGINE': 'django.db.backends.postgresql',
+ #       'NAME': config('DB_NAME'),
+ #       'USER': config('DB_USER'),
+ #       'PASSWORD': config('DB_PASSWORD'),
+ #       'HOST': 'localhost',
+ #       'PORT': '5432',
+ #   }
+#}
+
+
+#try:
+#    from .settings_local import *
+#except ImportError:
+#    pass
+
