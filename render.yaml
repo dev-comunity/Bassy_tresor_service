@@ -1,0 +1,11 @@
+# render.yaml
+buildCommand: pip install -r requirements.txt
+startCommand: daphne Bassy_tresor_service.asgi:application
+
+# Configuration du service
+services:
+  - name: web
+    type: web
+    env: python
+    envVars:
+      DJANGO_SETTINGS_MODULE: "Bassy_tresor_service.settings"
