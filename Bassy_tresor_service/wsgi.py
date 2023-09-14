@@ -1,5 +1,5 @@
 """
-WSGI config for Bassy_tresor_service project.
+WSGI config for e_learning project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

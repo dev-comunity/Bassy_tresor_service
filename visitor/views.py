@@ -5,6 +5,14 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import*
 
+from django.db.models import Q
+from academie.models import*  # Importez les modèles nécessaires
+from astuce.models import*
+from consultation.models import*
+from produit.models import*
+from communaute.models import*
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 def acceuil(request):
@@ -64,14 +72,6 @@ def add_notifications(user,action,target):
 
 
 #FONCTION DE RECHERCHE
-from django.db.models import Q
-from academie.models import*  # Importez les modèles nécessaires
-from astuce.models import*
-from consultation.models import*
-from produit.models import*
-from communaute.models import*
-from django.contrib.auth.decorators import login_required
-
 
 
 @login_required
@@ -84,35 +84,35 @@ def recherche_generale(request):
 
         
  # Recherche dans Questionnaire
-        results |=Questionnaire.objects.filter(
+        results +=Questionnaire.objects.filter(
             Q(question__icontains=query) 
         )
 
 
  # Recherche dans DemandeReve
-        results |= DemandeReve.objects.filter(
+        results += DemandeReve.objects.filter(
             Q(decrire__icontains=query)
         )
 
 # Recherche dans Reve
-        results |= Reve.objects.filter(
+        results += Reve.objects.filter(
             Q(objet__icontains=query) | Q(desc__icontains=query)
         )
 
 # Recherche dans Astuce
-        results |= Astuce.objects.filter(
+        results += Astuce.objects.filter(
             Q(titre__icontains=query) | Q(astuce__icontains=query)
         )
 
 
 
 # Recherche dans Produit
-        results |= Produit.objects.filter(
+        results += Produit.objects.filter(
             Q(nom_produit__icontains=query) | Q(typeproduit__icontains=query)|Q(caractere__icontains=query)
         )
 
 # Recherche dans Demandeproduit
-        results |= Demandeproduit.objects.filter(
+        results += Demandeproduit.objects.filter(
             Q(nomproduit__icontains=query) | Q(caractere__icontains=query)
         )
 

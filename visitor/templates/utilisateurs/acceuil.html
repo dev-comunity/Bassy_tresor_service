@@ -1,28 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <script>
-    const roomName = JSON.parse(document.getElementById('room-name').textContent);
 
-  const notifSocket = new WebSocket(
-    'ws://'
-    + window.location.host
-    + '/ws/notif/feed/'
-);
-notifSocket.onopen=function(){
-  console.log("connection is open")
-}
-notifSocket.onmessage=function(e){
-  const data=JSON.parse(e.data)
-  console.log(data)
-}
-notifSocket.onclose=function(e){
-  console.error(e)
-  
-}
-  </script>
-
-<div class="col md-12">
+<div class="col md-12" ">
   <div class="col">
      <center>
         <div class="card-header" >
@@ -79,8 +59,8 @@ notifSocket.onclose=function(e){
         </div>
   </div>
     
-  <div class="col md-12">
-    <div style=" float:right; width: 350px;height: 800px;margin-top: 20px;">
+  <div class="col md-12" style="margin-right: 60px;">
+    <div style=" float:right; width: 360px;height: 800px;margin-top: 20px;">
               
                   <div class="col">
                     <p>Pour tous besion de consultation voir cette page </p>

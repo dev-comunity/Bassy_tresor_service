@@ -23,13 +23,14 @@ TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-from decouple import config
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY ='641a0613a98c453a722aed399a87801300f1b1b58acd485097b5d5fd39afa664'
+#from decouple import config
+#SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = "visitor.User"
 
@@ -99,19 +100,19 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#        "TEST": {
-#            "NAME": BASE_DIR / "db.sqlite3",
-#        },
-#    }
-#}
-
 DATABASES = {
-    'default':dj_database_url.parse(config('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        "TEST": {
+            "NAME": BASE_DIR / "db.sqlite3",
+        },
+    }
 }
+
+#DATABASES = {
+#    'default':dj_database_url.parse(config('DATABASE_URL'))
+#}
 
 
 # Password validation
@@ -150,8 +151,8 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 MEDIA_URL='/Media/'
@@ -162,27 +163,4 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'Media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL="/login"
-#django_heroku.settings(locals())
-
-
-#from decouple import config
-
-#SECRET_KEY = config('SECRET_KEY')
-#DEBUG = config('DEBUG', default=False, cast=bool)
-#DATABASES = {
-#    'default': {
- #       'ENGINE': 'django.db.backends.postgresql',
- #       'NAME': config('DB_NAME'),
- #       'USER': config('DB_USER'),
- #       'PASSWORD': config('DB_PASSWORD'),
- #       'HOST': 'localhost',
- #       'PORT': '5432',
- #   }
-#}
-
-
-#try:
-#    from .settings_local import *
-#except ImportError:
-#    pass
 

@@ -3,21 +3,12 @@
 
 
 {% block content %}
-    What chat room would you like to enter?<br>
-    <input id="room-name-input" type="text" size="100"><br>
-    <input id="room-name-submit" type="button" value="Enter">
-
-    <script>
-        document.querySelector('#room-name-input').focus();
-        document.querySelector('#room-name-input').onkeyup = function(e) {
-            if (e.key === 'Enter') {  // enter, return
-                document.querySelector('#room-name-submit').click();
-            }
-        };
-
-        document.querySelector('#room-name-submit').onclick = function(e) {
-            var roomName = document.querySelector('#room-name-input').value;
-            window.location.pathname = '/academie/' + roomName + '/';
-        };
-    </script>
+    <center>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{message}}
+            {{question.as_p}}
+            <button type="submit" class="btn btn-primary"> Envoyer</button>
+        </form>
+    </center>
 {% endblock %}

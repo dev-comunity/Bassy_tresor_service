@@ -22,7 +22,7 @@ class Academicien(LoginRequiredMixin,models.Model):
     
 
 class Questionnaire(LoginRequiredMixin,models.Model):
-    utilisateur=Academicien.nom
+    
     question=models.TextField(null=True)
     date=models.DateTimeField(auto_now_add=True,null=True)
 
