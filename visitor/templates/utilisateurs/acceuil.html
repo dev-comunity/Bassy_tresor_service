@@ -3,120 +3,71 @@
 {% block content %}
 
 <div class="col md-12" ">
-  <div class="col">
-     <center>
-        <div class="card-header" >
-            <h5> Bienvenue sur notre plateforme de soin naturel !</h5>
-        </div>
-      </center>
-      <div class="col md-12" style=" float:left; width: 550px;height: 700px;margin-top: 20px;">
-          <div class="card-body">
-            <div class="card-text col md-12">
-              <ul>
-                <li>
-                  Notre site de consultation est dédié à vous offrir des services <br>
-                  de qualité pour répondre à vos besoins et préoccupations.
-                </li>
-                <li>
-                  Que ce soit pour des conseils professionnels, des avis médicaux,<br>
-                  des séances de coaching personnel, ou des expertises spécialisées,<br>
-                  nous mettons à votre disposition un réseau de professionnels compétents <br>
-                  et expérimentés prêts à vous accompagner.
-                </li>
-                <li>
-                  Notre équipe diversifiée de consultants qualifiés couvre une vaste gamme de domaines,<br>
-                  garantissant que vous trouverez l'expertise adaptée à vos questions.
-                </li>
-                <li>
-                  Grâce à notre plateforme conviviale et sécurisée,<br>
-                  vous pouvez accéder à des consultations en ligne à tout moment et n'importe où, <br> 
-                  vous offrant la flexibilité dont vous avez besoin pour votre emploi du temps chargé.
-                </li>
-            </ul>
-                <h6>Comment ça fonctionne ?</h6>
-                <ol>
-                <li>
-                    Choisissez le domaine de consultation qui correspond à vos besoins : <br>
-                    que ce soit professionnel, médical, psychologique, juridique, <br>
-                    ou autre, nous avons le consultant adapté pour vous.
-                </li>
-                <li>
-                    Sélectionnez un consultant parmi nos professionnels certifiés.
-                </li>
-                <li>
-                    Planifiez une consultation en ligne à votre convenance.
-                </li>
-                <li>
-                    Profitez de la consultation en temps réel, via un chat,
-                    un appel vocal ou une vidéoconférence, selon vos préférences.
-                </li>
-                <li>Bénéficiez d'avis éclairés, de conseils pertinents
-                  et de solutions adaptées à votre situation</li>
-              </ol>
-            </div>
-          </div>
-        
-        </div>
-  </div>
+  
     
   <div class="col md-12" style="margin-right: 60px;">
-    <div style=" float:right; width: 360px;height: 800px;margin-top: 20px;">
-              
-                  <div class="col">
-                    <p>Pour tous besion de consultation voir cette page </p>
+    <div class="col">
+              <hr>
+                <div class="col">
+                  <div style="float: left; width: 500px;">
+                    <p> Cette page est reservée aux consultations preoccupantes (Travail,Argent, Santé, Mariages,)  </p>
                     <div class="card h-100" style="background-color:blue;">
                       <div class="card-body" style="height: 70px;">
                         
                         <a href="{% url 'acceuille' %}">
                           <center>
-                          <h5 class="card-title" style="color: white;">Se faire consulter</h5>
+                          <h5 class="card-title" style="color: white;">CONSULTATIONS</h5>
                           </center>
                         </a>
                         <p class="card-text"></p>
                       </div>
                     </div>
-                  </div>
+                  
                   <hr>
-                  <div class="col">
-                    <p>Pour tous besion d'interpretation de reve voir cette page</p>
+                  
+                    <p>La nature nous parle par diverse chemin, en ce qui concerne les reves, <br>
+                       cette page est la bonne pour décortiquer les messages que la nature nous envoie dans des reves  </p>
                     <div class="card h-100" style="background-color: blue;">
                     
                       <div class="card-body" style="height: 70px;">
 
                         <a href="{% url 'acceuillereve' %}">
                           <center>
-                        <h5 class="card-title" style="color: white;">Definition de reve </h5>
+                        <h5 class="card-title" style="color: white;">REVES</h5>
                         </center>
                       </a>
                         <p class="card-text"></p>
                       </div>
                     </div>
                   </div>
-                  <hr>
+                </div>
+
+                 
+                  
                   <div class="col">
-                    <p>Pour tous besion d'adhesion à notre academic voir cette page </p>
-                    <div class="card h-100" style="background-color: blue;">
-                      
-                      <div class="card-body" style="height: 70px;">
-                        <a href="{% url 'acceuille_academic' %}">
-                          <center>
-                          <h5 class="card-title" style="color: white;">Acceder à l'academie de formation </h5>
-                          </center>
-                        </a>
-                        <p class="card-text"></p>
-                      </div>
-                      
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="col">
-                    <p>Pour tous besion de produit voir cette page </p>
+                    <div style="float: right; width: 500px;">
+                      <p>Cette page est pour les produits de tout besion! <br> <br></p>
                     <div class="card h-100" style="background-color: blue;">
                       <!--<img src="..." class="card-img-top" alt="...">-->
                       <div class="card-body" style="height: 70px;">
                         <a href="{% url 'homeproduit' %}">
                           <center>
-                          <h5 class="card-title" style="color: white;">Voir les produits disponibles</h5>
+                          <h5 class="card-title" style="color: white;">PRODUITS</h5>
+                          </center>
+                        </a>
+                        <p class="card-text"></p>
+                      </div>
+                    </div>
+                    <hr>
+                    <p>Le savoir est la garantie de la réussite, pour tous ceux qui desirent apprendre ( en ligne comme présentiel) avec nos academiciens ,
+                      <br> cette page sera son meilleur choix !
+                    </p>
+                    <div class="card h-100" style="background-color: blue;">
+                      
+                      <div class="card-body" style="height: 70px;">
+                        <a href="{% url 'acceuille_academic' %}">
+                          <center>
+                          <h5 class="card-title" style="color: white;"> APPRENTIS </h5>
                           </center>
                         </a>
                         <p class="card-text"></p>
@@ -124,15 +75,17 @@
                       
                     </div>
                   </div>
-                  <hr>
-                  <div class="col">
-                    <p>Pour tous besion d'astuce voir cette page </p>
+                </div>  
+    </div>
+            <center>
+                 <div style="margin-top: 400px; width: 500px;">
+                    <p>Nous vous partageons ici des connaissances générales sur certains faits de la nature !    </p>
                     <div class="card h-100" style="background-color: blue;">
                       
                       <div class="card-body" style="height: 70px;">
                         <a href="{% url 'acceuilleastuce' %}">
                           <center>
-                          <h5 class="card-title" style="color: white;">Voir les astuces naturelles</h5>
+                          <h5 class="card-title" style="color: white;">ASTUCES</h5>
                           </center>
                         </a>
                         <p class="card-text"></p>
@@ -140,7 +93,8 @@
                       
                     </div>
                   </div>
-    </div>
+          </center>
+                  
   </div>
 </div>
 <hr width="10px">

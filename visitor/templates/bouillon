@@ -156,3 +156,48 @@ class Profile (models.Model):
         {% endif%}
 
     {% endfor %}
+
+
+    <ul>
+        <li>
+          Notre site de consultation est dédié à vous offrir des services <br>
+          de qualité pour répondre à vos besoins et préoccupations.
+        </li>
+        <li>
+          Que ce soit pour des conseils professionnels, des avis médicaux,<br>
+          des séances de coaching personnel, ou des expertises spécialisées,<br>
+          nous mettons à votre disposition un réseau de professionnels compétents <br>
+          et expérimentés prêts à vous accompagner.
+        </li>
+        <li>
+          Notre équipe diversifiée de consultants qualifiés couvre une vaste gamme de domaines,<br>
+          garantissant que vous trouverez l'expertise adaptée à vos questions.
+        </li>
+        <li>
+          Grâce à notre plateforme conviviale et sécurisée,<br>
+          vous pouvez accéder à des consultations en ligne à tout moment et n'importe où, <br> 
+          vous offrant la flexibilité dont vous avez besoin pour votre emploi du temps chargé.
+        </li>
+    </ul>
+        <h6>Comment ça fonctionne ?</h6>
+        <ol>
+        <li>
+            Choisissez le domaine de consultation qui correspond à vos besoins : <br>
+            que ce soit professionnel, médical, psychologique, juridique, <br>
+            ou autre, nous avons le consultant adapté pour vous.
+        </li>
+        <li>
+            Sélectionnez un consultant parmi nos professionnels certifiés.
+        </li>
+        <li>
+            Planifiez une consultation en ligne à votre convenance.
+        </li>
+        <li>
+            Profitez de la consultation en temps réel, via un chat,
+            un appel vocal ou une vidéoconférence, selon vos préférences.
+        </li>
+        <li>Bénéficiez d'avis éclairés, de conseils pertinents
+          et de solutions adaptées à votre situation</li>
+      </ol>
+
+

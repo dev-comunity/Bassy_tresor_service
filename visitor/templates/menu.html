@@ -1,25 +1,24 @@
-<!-- Inclure jQuery (si ce n'est pas déjà fait) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Inclure le fichier JavaScript de Bootstrap -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-<div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      menu de lien
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-</div>
-<script>
-    // Attendre que le document soit prêt
-    $(document).ready(function(){
-      // Initialiser tous les éléments avec la classe "dropdown-toggle" comme des dropdowns
-      $('.dropdown-toggle').dropdown();
-    });
-  </script>
+<menu>
   
+  
+  <a href="{% url 'acceuil' %}" style="margin: 5px;">
+    | Page d'accueille
+  </a>
+
+  <a href="{% url 'acceuillereve' %}" style="margin: 5px;">
+    | Reves
+  </a>
+  <a href="{% url 'acceuille' %}" style="margin: 5px;">
+    | Consultation
+  </a>
+  <a href="{% url 'homeproduit' %}" style="margin: 5px;">
+    | Produits
+  </a>
+  <a href="{% url 'acceuilleastuce' %}" style="margin: 5px;">
+    | Astuces
+  </a>
+  <a href="{% url 'acceuille_academic' %}" style="margin: 5px;">
+    | Academie
+  </a>
+
+</menu>

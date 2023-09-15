@@ -38,7 +38,7 @@ AUTH_USER_MODEL = "visitor.User"
 # Application definition
 
 INSTALLED_APPS = [
-    'daphne',
+    #'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,16 +86,16 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Bassy_tresor_service.wsgi.application',
-ASGI_APPLICATION = 'Bassy_tresor_service.asgi.application'
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
-        },
-    },
-}
+WSGI_APPLICATION = 'Bassy_tresor_service.wsgi.application'
+#ASGI_APPLICATION = 'Bassy_tresor_service.asgi.application'
+#CHANNEL_LAYERS = {
+#    "default": {
+#        "BACKEND": "channels_redis.core.RedisChannelLayer",
+#        "CONFIG": {
+#            "hosts": [("127.0.0.1", 6379)],
+#        },
+#    },
+#}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
