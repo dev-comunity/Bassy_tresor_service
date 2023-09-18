@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'communaute',
     'crispy_forms',
     'crispy_bootstrap5',
-    
 ]
 
 
