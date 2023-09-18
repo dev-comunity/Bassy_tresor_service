@@ -8,7 +8,7 @@
       {% if registered %}
       <h2>vous etes déjà enregistrer</h2>
       {% endif %}
-      <form action="" method="post">
+      <form action="" method="post" style="max-width: 500px;">
         {% csrf_token %}
         <p>{{form1 | crispy}}</p>
         <br />

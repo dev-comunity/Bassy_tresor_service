@@ -4,9 +4,9 @@
 
 {% block content %}
 <center>
-  <form method="post" action="affichecours">
+  <form method="post" action="" style="max-width: 500px;">
       {% csrf_token %}
-      {{message|crispy}}
+      <p>{{message | crispy}}</p>
       <br>
       {{form2|crispy}}
       <br>

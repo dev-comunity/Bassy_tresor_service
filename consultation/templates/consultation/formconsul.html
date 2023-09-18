@@ -5,10 +5,10 @@
 
 <center>
   <p> chers consultants veuillez remplir les champs de manière precise pour recevoir une consultation de qualité ! </p>
-  <form action="" method="post">
+  <form action="" method="post" style="max-width: 500px;">
     {% csrf_token %}
 
-    {{form|crispy}}
+    <p>{{form | crispy}}</p>
     <br>
     <button type="submit" class="btn btn-primary"> Envoyer </button>
     <br>

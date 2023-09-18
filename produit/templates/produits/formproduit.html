@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <form action="" method="post">
+    <form action="" method="post" style="max-width: 500px;">
         {% crsf_token %}
         {{message}}
         {% form|crispy %}

@@ -1,10 +1,10 @@
 {% extends 'base.html'%}
 
 {% block content %}
-    <form action="" method="post">
+    <form action="" method="post" style="max-width: 500px;">
         {% crsf_token %}
 
-        {{formcours|crispy}}
+        <p>{{formcours | crispy}}</p>
         <button type="submit">Deposer le cours</button>
         <br>
         <button type="submit">Annuler le depot </button>
