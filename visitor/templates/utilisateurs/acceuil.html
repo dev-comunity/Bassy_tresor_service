@@ -2,100 +2,81 @@
 
 {% block content %}
 
-<div class="col md-12" ">
+<div class="row md-12" >
   
     
-  <div class="col md-12" style="margin-right: 60px;">
-    <div class="col">
+    
+          <div class="col">
               <hr>
-                <div class="col">
-                  <div style="float: left;">
-                    <p> Cette page est reservée aux consultations preoccupantes (Travail,Argent, Santé, Mariages,)  </p>
-                    <div class="card h-100" style="background-color:blue;">
-                      <div class="card-body" style="height: 70px;">
-                        
-                        <a href="{% url 'acceuille' %}">
-                          <center>
-                          <h5 class="card-title" style="color: white;">CONSULTATIONS</h5>
-                          </center>
-                        </a>
-                        <p class="card-text"></p>
-                      </div>
-                    </div>
+                <div class=" float-start ">
                   
+                    <p> Cette page est reservée aux consultations preoccupantes (Travail,Argent, Santé, Mariages,)  </p>
+                        <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                          <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                              
+                          </span>
+                          <a href="{% url 'acceuille' %}" style="color:white;width: 10px;"> consultation </a>
+                        </button>
+                      
                   <hr>
                   
                     <p>La nature nous parle par diverse chemin, en ce qui concerne les reves, <br>
                        cette page est la bonne pour décortiquer les messages que la nature nous envoie dans des reves  </p>
-                    <div class="card h-100" style="background-color: blue;">
                     
-                      <div class="card-body" style="height: 70px;">
-
-                        <a href="{% url 'acceuillereve' %}">
-                          <center>
-                        <h5 class="card-title" style="color: white;">REVES</h5>
-                        </center>
-                      </a>
-                        <p class="card-text"></p>
-                      </div>
-                    </div>
-                  </div>
+                    <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                          
+                      </span>
+                      <a href="{% url 'acceuillereve' %}" style="color:white;width: 10px;"> reve</a>
+                    </button>
+                 
                 </div>
+            </div>
 
                  
-                  
-                  <div class="col">
-                    <div style="float: right;">
+          <div class="col">   
+              <div class="float-end" style="margin-left: 50px;">
+                <hr>
+
                       <p>Cette page est pour les produits de tout besion! <br> <br></p>
-                    <div class="card h-100" style="background-color: blue;">
-                      <!--<img src="..." class="card-img-top" alt="...">-->
-                      <div class="card-body" style="height: 70px;">
-                        <a href="{% url 'homeproduit' %}">
-                          <center>
-                          <h5 class="card-title" style="color: white;">PRODUITS</h5>
-                          </center>
-                        </a>
-                        <p class="card-text"></p>
-                      </div>
-                    </div>
+                    <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                          
+                      </span>
+                      <a href="{% url 'homeproduit' %}" style="color:white;width: 10px;"> produits </a>
+                    </button>
+                    <br>
+                    
                     <hr>
                     <p>Le savoir est la garantie de la réussite, pour tous ceux qui desirent apprendre ( en ligne comme présentiel) avec nos academiciens ,
                       <br> cette page sera son meilleur choix !
                     </p>
-                    <div class="card h-100" style="background-color: blue;">
-                      
-                      <div class="card-body" style="height: 70px;">
-                        <a href="{% url 'acceuille_academic' %}">
-                          <center>
-                          <h5 class="card-title" style="color: white;"> APPRENTIS </h5>
-                          </center>
-                        </a>
-                        <p class="card-text"></p>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>  
-    </div>
+                    <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                          
+                      </span>
+                      <a href="{% url 'acceuille_academic' %}" style="color:white;width: 10px;"> apprentis </a>
+                    </button>
+                    
+                  
+                </div>
+            </div>  
+          
+        
             <center>
-                 <div style="margin-top: 400px;">
+              <hr>
+                 <div class="float-none" style="margin-top: 20px;margin-right:50px ;">
                     <p>Nous vous partageons ici des connaissances générales sur certains faits de la nature !    </p>
-                    <div class="card h-100" style="background-color: blue;">
-                      
-                      <div class="card-body" style="height: 70px;">
-                        <a href="{% url 'acceuilleastuce' %}">
-                          <center>
-                          <h5 class="card-title" style="color: white;">ASTUCES</h5>
-                          </center>
-                        </a>
-                        <p class="card-text"></p>
-                      </div>
-                      
-                    </div>
+                    <button class="btn btn-primary" type="submit" style="width: 200px;" >
+                      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+                          
+                      </span>
+                      <a href="{% url 'acceuilleastuce' %}" style="color:white;width: 10px;"> astuce </a>
+                    </button>
                   </div>
           </center>
                   
-  </div>
+  
 </div>
 <hr width="10px">
 {% endblock %}
