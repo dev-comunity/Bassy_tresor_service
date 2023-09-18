@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = "visitor.User"
+# AUTH_USER_MODEL = "visitor.User"
 
 
 # Application definition
