@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'academie',
     'astuce',
     'consultation',
-    'visitor',
+    'visitor.apps.VisitorConfig',
     'communaute',
     'crispy_forms',
     'crispy_bootstrap5',
