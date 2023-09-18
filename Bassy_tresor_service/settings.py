@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
+# import dj_database_url
 #import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,15 +30,15 @@ SECRET_KEY ='641a0613a98c453a722aed399a87801300f1b1b58acd485097b5d5fd39afa664'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
-AUTH_USER_MODEL = "visitor.User"
 
 
 # Application definition
 
 INSTALLED_APPS = [
     #'daphne',
+    'visitor.apps.VisitorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,12 +49,11 @@ INSTALLED_APPS = [
     'academie',
     'astuce',
     'consultation',
-    'visitor',
     'communaute',
     'crispy_forms',
     'crispy_bootstrap5',
-    
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -169,3 +168,7 @@ LOGIN_URL="/login"
 # django crispy forms settings
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+# django auth user model
+AUTH_USER_MODEL = "visitor.User"
