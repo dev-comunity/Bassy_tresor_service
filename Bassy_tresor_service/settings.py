@@ -32,7 +32,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# AUTH_USER_MODEL = "visitor.User"
 
 
 # Application definition
@@ -55,6 +54,8 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     
 ]
+
+AUTH_USER_MODEL = "visitor.User"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
