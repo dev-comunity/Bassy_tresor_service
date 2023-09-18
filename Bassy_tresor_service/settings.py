@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     #'daphne',
+    'visitor.apps.VisitorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,14 +49,12 @@ INSTALLED_APPS = [
     'academie',
     'astuce',
     'consultation',
-    'visitor.apps.VisitorConfig',
     'communaute',
     'crispy_forms',
     'crispy_bootstrap5',
     
 ]
 
-AUTH_USER_MODEL = "visitor.User"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -170,3 +169,7 @@ LOGIN_URL="/login"
 # django crispy forms settings
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+# django auth user model
+AUTH_USER_MODEL = "visitor.User"
