@@ -6,7 +6,7 @@
 <center>
   <form method="post" action="affichecours">
       {% csrf_token %}
-      {{message.as_p}}
+      {{message|crispy}}
       <br>
       {{form2|crispy}}
       <br>

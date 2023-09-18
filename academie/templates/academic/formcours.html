@@ -4,7 +4,7 @@
     <form action="" method="post">
         {% crsf_token %}
 
-        {{formcours.as_p|crispy}}
+        {{formcours|crispy}}
         <button type="submit">Deposer le cours</button>
         <br>
         <button type="submit">Annuler le depot </button>

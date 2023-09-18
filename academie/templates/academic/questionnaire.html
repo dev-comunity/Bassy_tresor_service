@@ -7,7 +7,7 @@
         <form action="" method="post">
             {% csrf_token %}
             {{message}}
-            {{question.as_p}}
+            {{question|crispy}}
             <button type="submit" class="btn btn-primary"> Envoyer</button>
         </form>
     </center>

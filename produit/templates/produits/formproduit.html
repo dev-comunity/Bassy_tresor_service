@@ -5,7 +5,7 @@
     <form action="" method="post">
         {% crsf_token %}
         {{message}}
-        {% form.as_p|crispy %}
+        {% form|crispy %}
         
         <button type="submit" class="btn btn-primary"> Deposer le produit </button>
         s
