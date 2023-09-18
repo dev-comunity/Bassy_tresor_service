@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'visitor',
     'communaute',
     'crispy_forms',
+    'crispy_bootstrap5',
     
 ]
 
@@ -151,8 +152,8 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_DIRS = [ BASE_DIR / "static" ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 MEDIA_URL='/Media/'
@@ -164,3 +165,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'Media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL="/login"
 
+
+# django crispy forms settings
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"

@@ -103,7 +103,7 @@ def Saveproduit(request):
 @login_required
 def Afficheproduits(request):
     produit=Produit.objects.all()
-    return render(request,'Produits/pageproduit.html',{'produit':produit})
+    return render(request,'produits/pageproduit.html',{'produit':produit})
 
 
 
