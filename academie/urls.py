@@ -13,4 +13,5 @@ urlpatterns=[
     path('detail/<int:id_admin>',detailDemande,name='detail'),
     path('afficheacademicien',afficheacademicien,name='afficheacademicien'),
     
+    
 ]

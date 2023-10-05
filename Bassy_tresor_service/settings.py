@@ -28,7 +28,7 @@ SECRET_KEY ='641a0613a98c453a722aed399a87801300f1b1b58acd485097b5d5fd39afa664'
 #SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -38,6 +38,8 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     #'daphne',
+    'apppaypal',
+    'paypal.standard.ipn',
     'visitor.apps.VisitorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,9 +52,12 @@ INSTALLED_APPS = [
     'astuce',
     'consultation',
     'communaute',
+    
     'crispy_forms',
     'crispy_bootstrap5',
 ]
+
+PAYPAL_TEST = True
 
 
 MIDDLEWARE = [

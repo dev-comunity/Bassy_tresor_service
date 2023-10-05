@@ -26,12 +26,12 @@ def register(request):
         usersave=userforms(data=request.POST)
         if usersave.is_valid():
             user=usersave.save()
-            user.save()
+            user.save(commit=True)
             registered=True
             #add_notifications(request.user, 'user_name', user_name)
             return redirect('login')
         else:
-            print(user_name.errors)
+            print(userforms.errors)
     else:
         user_name=userforms()
        
@@ -54,7 +54,7 @@ def user_login(request):
             else :
                 return HttpResponse("L'utilisateur est desactivé")
         else:
-            return HttpResponse("le nom d'utilisateur ou le mot de passe est incorrect")
+            print("le nom d'utilisateur ou le mot de passe est incorrect" )
     else:
         return render(request,'utilisateurs/login.html')
     

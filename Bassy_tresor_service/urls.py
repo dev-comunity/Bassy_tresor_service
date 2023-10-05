@@ -27,6 +27,8 @@ urlpatterns = [
     path('astuce/',include('astuce.urls')),
     path('consultation/',include('consultation.urls')),
     path('communaute/',include('communaute.urls')),
+    path('paypal/', include('paypal.standard.ipn.urls')),
+    # path('apppaypal/',include('apppaypal.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
